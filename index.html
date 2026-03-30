@@ -129,14 +129,19 @@
   <div class="contact-container">
 
     <div class="contact-texto">
-      <h2>Contatos</h2>
+      <h2>Entre em Contato</h2>
       <p>Me manda uma mensagem! Fico feliz em conversar sobre projetos, ideias ou oportunidades.</p>
     </div>
 
+    <form class="contact-form" onsubmit="sendmsg(event)">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="email" id="email" placeholder="Seu e-mail" required>
+      <textarea id="mensagem" rows="6" placeholder="Digite sua mensagem" required></textarea>
+
+      <button type="submit">Enviar WhatsApp</button>
+    </form>
+
     <div class="contact-links">
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bentzenenzo@gmail.com" target="_blank" class="contact-btn">
-    Gmail
-</a>
       <a href="https://github.com/enzobentzen" target="_blank" class="contact-btn">GitHub</a>
       <a href="https://www.linkedin.com/in/enzo-bentzen-025945379/" target="_blank" class="contact-btn">LinkedIn</a>
     </div>
@@ -144,5 +149,25 @@
   </div>
 </section>
 
+<script>
+  function sendmsg(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const mensagem = document.getElementById("mensagem").value;
+
+    const telefone = "5521999741918";
+
+    const texto = `Olá! Me chamo ${nome}. Meu e-mail é ${email}. ${mensagem}`;
+
+    const url = `https://wa.me/${telefone}?text=${encodeURIComponent(texto)}`;
+
+    window.open(url, "_blank");
+  }
+</script>
+<footer>
+  <p>© 2026 Enzo Benzen.Todos os direitos reservados.</p>
+</footer>
 </body>
 </html>

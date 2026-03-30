@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #0a0a0a;
   color: #f9f9f9;
@@ -145,7 +149,7 @@ header {
 .projetos {
   margin-top: 80px;
   padding: 50px;
-  text-align: center; /* centraliza o h2 */
+  text-align: center;
 }
 
 .projetos h2 {
@@ -283,6 +287,43 @@ header {
 .contact-btn:hover {
   background-color: #1d4ed8;
   transform: translateY(-4px);
+}
+
+footer {
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 500px;
+  margin: 30px auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #111;
+  color: white;
+  font-size: 16px;
+  resize: none;
+}
+
+.contact-form button {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #1d4ed8;
 }
 
 @media (max-width: 768px) {
@@ -425,4 +466,7 @@ header {
     max-width: 280px;
     text-align: center;
   }
+}
+.contact-form {
+  width: 90%;
 }
